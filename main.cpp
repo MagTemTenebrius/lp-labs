@@ -1,12 +1,11 @@
-#include <iostream>
-#include "Set.hpp"
+#include "mainwindow.h"
 
-int main() {
-    FILE* file = fopen("get.txt", "r");
+#include <QApplication>
 
-    Set* newset = new Set(file);
-    newset->show();
-
-    std::cout << (newset->isField() ? "Это поле" : "Это не поле\n");
-    return 0;
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
 }
